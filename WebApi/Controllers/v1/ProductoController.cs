@@ -16,6 +16,11 @@ namespace WebApi.Controllers.v1
             return Ok(await Mediator.Send(new GetAllProductoQuery()));
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await Mediator.Send(new GetByProductoIdQuery { Id = id }));
+        }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateProductoCommand command)
@@ -29,10 +34,10 @@ namespace WebApi.Controllers.v1
             return Ok(await Mediator.Send(command));
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Put([FromBody] DeleteProductoCommand command)
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await Mediator.Send(command));
+            return Ok(await Mediator.Send(new DeleteProductoCommand { Id = id }));
         }
     }
 }

@@ -13,6 +13,7 @@
 // ***********************************************************************
 
 using Application.DTOs;
+using Application.Feautures.Editorial.Queries.GetAllProducto;
 using Application.Feautures.Factura.Commands.CreateCategoriaCommand;
 using Application.Feautures.Producto.Commands.DeleteProductoCommand;
 using Application.Feautures.Producto.Commands.EditProductoCommand;
@@ -37,8 +38,7 @@ namespace Application.Mappings
 
             CreateMap<Categorias, CategoriaDto>().ReverseMap();
 
-            CreateMap<Productos, ProductoDto>()
-                .ReverseMap();
+            CreateMap<Productos, ProductoDto>().ReverseMap();
             #endregion
 
             #region Commands

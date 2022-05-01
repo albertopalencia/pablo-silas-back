@@ -32,7 +32,7 @@ namespace Application.Feautures.Producto.Commands.CreateProductoCommand
     { 
         public string Nombre { get; set; }
 
-        public int IdCategoria { get; set; }
+        public int Categoria { get; set; }
 
         public string Descripcion { get; set; }
   
@@ -63,7 +63,7 @@ namespace Application.Feautures.Producto.Commands.CreateProductoCommand
             /// <exception cref="ApiException">El codigo {request.Isbn} ya esta siendo utilizado</exception>
             public async Task<Response<int>> Handle(CreateProductoCommand request, CancellationToken cancellationToken)
             {
-                var producto = new Domain.Entities.Productos(request.Nombre, request.IdCategoria, request.Descripcion);
+                var producto = new Domain.Entities.Productos(request.Nombre, request.Categoria, request.Descripcion);
                 await _repository.AddAsync(producto, cancellationToken);
                 return new Response<int>(producto.Id);
             }
