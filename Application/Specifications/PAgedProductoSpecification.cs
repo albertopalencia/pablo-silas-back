@@ -45,7 +45,7 @@ namespace Application.Specifications
 
             if (!string.IsNullOrEmpty(categoria))
             {
-                query = query.Where(s => s.Categorias.Nombre.Contains(nombre));
+                query = query.Where(s => s.Categorias.Nombre.Contains(categoria));
             }
 
             query.Skip((pageNumber - 1) * pageSize)
