@@ -4,7 +4,7 @@
 // Created          : 01-06-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 01-06-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
 // <copyright file="Startup.cs" company="WebApi">
 //     Copyright (c) everis. All rights reserved.
@@ -30,7 +30,7 @@ namespace WebApi
     public class Startup
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// Initializes a new instance of the <see cref="Startup" /> class.
         /// </summary>
         /// <param name="configuration">The configuration.</param>
         public Startup(IConfiguration configuration)

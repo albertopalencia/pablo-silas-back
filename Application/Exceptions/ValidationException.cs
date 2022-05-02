@@ -4,7 +4,7 @@
 // Created          : 01-06-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 03-24-2022
+// Last Modified On : 03-26-2022
 // ***********************************************************************
 // <copyright file="ValidationException.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.

@@ -4,7 +4,7 @@
 // Created          : 27-04-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 27-04-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
 // <copyright file="CreateCategoriaCommand.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
@@ -30,8 +30,16 @@ namespace Application.Feautures.Factura.Commands.CreateCategoriaCommand
     public class CreateCategoriaCommand : IRequest<Response<int>>
     {
 
+        /// <summary>
+        /// Gets or sets the nombre.
+        /// </summary>
+        /// <value>The nombre.</value>
         public string Nombre { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="CreateCategoriaCommand"/> is estado.
+        /// </summary>
+        /// <value><c>true</c> if estado; otherwise, <c>false</c>.</value>
         public bool Estado { get; set; }
 
         /// <summary>

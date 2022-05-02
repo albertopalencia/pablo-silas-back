@@ -33,7 +33,7 @@ namespace WebApi.Middlewares
         private readonly RequestDelegate _next;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorHandlerMiddleware"/> class.
+        /// Initializes a new instance of the <see cref="ErrorHandlerMiddleware" /> class.
         /// </summary>
         /// <param name="next">The next.</param>
         public ErrorHandlerMiddleware(RequestDelegate next)

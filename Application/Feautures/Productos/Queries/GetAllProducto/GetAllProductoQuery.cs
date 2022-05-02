@@ -4,7 +4,7 @@
 // Created          : 27-04-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 27-04-2022
+// Last Modified On : 04-30-2022
 // ***********************************************************************
 // <copyright file="GetAllProductoQuery.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
@@ -31,6 +31,21 @@ namespace Application.Feautures.Editorial.Queries.GetAllProducto
     /// <seealso cref="MediatR.IRequest{Application.Wrappers.Response{System.Collections.Generic.List{Application.DTOs.ProductoDto}}}" />
     public class GetAllProductoQuery: IRequest<Response<List<ProductoDto>>>
     {
+
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public string Categoria { get; set; }
+
+        /// <summary>
+        /// Gets or sets the page number.
+        /// </summary>
+        /// <value>The page number.</value>
+        public int PageNumber { get; set; }
+        /// <summary>
+        /// Gets or sets the size of the page.
+        /// </summary>
+        /// <value>The size of the page.</value>
+        public int PageSize { get; set; }
 
         /// <summary>
         /// Class GetAllEditorialQueryHandler.
@@ -67,7 +82,12 @@ namespace Application.Feautures.Editorial.Queries.GetAllProducto
             /// <returns>Task&lt;Response&lt;List&lt;ProductoDto&gt;&gt;&gt;.</returns>
             public async Task<Response<List<ProductoDto>>> Handle(GetAllProductoQuery request, CancellationToken cancellationToken)
             {
-                var productos = await _repository.ListAsync(new Specifications.ProductoIncludeSpecification(), cancellationToken);                
+                var productos = await _repository.ListAsync( new Specifications.PagedProductoSpecification(
+                    request.Nombre,
+                    request.Descripcion,
+                    request.Categoria,
+                    request.PageSize,
+                    request.PageNumber), cancellationToken);                
                 var productosDto = _mapper.Map<List<ProductoDto>>(productos);
                 return new Response<List<ProductoDto>>(productosDto);
             }

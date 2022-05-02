@@ -4,7 +4,7 @@
 // Created          : 01-07-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 03-26-2022
+// Last Modified On : 04-30-2022
 // ***********************************************************************
 // <copyright file="GeneralProfile.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.

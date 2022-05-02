@@ -4,7 +4,7 @@
 // Created          : 27-04-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 27-04-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
 // <copyright file="MyRepositoryAsync.cs" company="Persistence">
 //     Copyright (c) everis. All rights reserved.
@@ -33,7 +33,7 @@ namespace Persistence.Repository
         /// </summary>
         private readonly ArandasoftContext _dbContext;
         /// <summary>
-        /// Initializes a new instance of the <see cref="MyRepositoryAsync{T}"/> class.
+        /// Initializes a new instance of the <see cref="MyRepositoryAsync{T}" /> class.
         /// </summary>
         /// <param name="dbContext">The database context.</param>
         public MyRepositoryAsync(ArandasoftContext dbContext): base(dbContext)

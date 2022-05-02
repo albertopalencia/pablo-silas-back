@@ -4,9 +4,9 @@
 // Created          : 27-04-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 27-04-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
-// <copyright file="GetAllFacturaQuery.cs" company="Application">
+// <copyright file="GetAllCategoriasQuery.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -51,7 +51,9 @@ namespace Application.Feautures.Factura.Queries.GetAllCategorias
         /// Class CategoriaQueryHandler.
         /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Book.Queries.GetAllFactura.GetAllFacturaQuery, Application.Wrappers.PagedResponse{System.Collections.Generic.List{Application.DTOs.CategoriaDto}}}" />
         /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Factura.Queries.GetAllFactura.GetAllCategoriasQuery, Application.Wrappers.PagedResponse{System.Collections.Generic.List{Application.DTOs.CategoriaDto}}}" />
+        /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Factura.Queries.GetAllCategorias.GetAllCategoriasQuery, Application.Wrappers.PagedResponse{System.Collections.Generic.List{Application.DTOs.CategoriaDto}}}" />
         /// </summary>
+        /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Factura.Queries.GetAllCategorias.GetAllCategoriasQuery, Application.Wrappers.PagedResponse{System.Collections.Generic.List{Application.DTOs.CategoriaDto}}}" />
         /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Factura.Queries.GetAllFactura.GetAllCategoriasQuery, Application.Wrappers.PagedResponse{System.Collections.Generic.List{Application.DTOs.CategoriaDto}}}" />
         /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Book.Queries.GetAllFactura.GetAllFacturaQuery, Application.Wrappers.PagedResponse{System.Collections.Generic.List{Application.DTOs.CategoriaDto}}}" />
         public class CategoriaQueryHandler : IRequestHandler<GetAllCategoriasQuery, PagedResponse<List<CategoriaDto>>>

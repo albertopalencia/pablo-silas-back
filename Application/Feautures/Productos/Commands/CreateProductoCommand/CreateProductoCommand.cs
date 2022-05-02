@@ -4,7 +4,7 @@
 // Created          : 01-07-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 01-13-2022
+// Last Modified On : 04-30-2022
 // ***********************************************************************
 // <copyright file="CreateProductoCommand.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
@@ -29,14 +29,31 @@ namespace Application.Feautures.Producto.Commands.CreateProductoCommand
     /// <seealso cref="MediatR.IRequest{Application.Wrappers.Response{System.Int32}}" />
     /// <seealso cref="MediatR.IRequest{Response{int}}" />
     public class CreateProductoCommand: IRequest<Response<int>>
-    { 
+    {
+        /// <summary>
+        /// Gets or sets the nombre.
+        /// </summary>
+        /// <value>The nombre.</value>
         public string Nombre { get; set; }
 
+        /// <summary>
+        /// Gets or sets the categoria.
+        /// </summary>
+        /// <value>The categoria.</value>
         public int Categoria { get; set; }
 
+        /// <summary>
+        /// Gets or sets the descripcion.
+        /// </summary>
+        /// <value>The descripcion.</value>
         public string Descripcion { get; set; }
-  
 
+
+        /// <summary>
+        /// Class CreateProductoCommandHandler.
+        /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Producto.Commands.CreateProductoCommand.CreateProductoCommand, Application.Wrappers.Response{System.Int32}}" />
+        /// </summary>
+        /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Producto.Commands.CreateProductoCommand.CreateProductoCommand, Application.Wrappers.Response{System.Int32}}" />
         public class CreateProductoCommandHandler : IRequestHandler<CreateProductoCommand, Response<int>>
         {
             /// <summary>
@@ -46,7 +63,7 @@ namespace Application.Feautures.Producto.Commands.CreateProductoCommand
 
 
             /// <summary>
-            /// Initializes a new instance of the <see cref="CreateProductoCommandHandler"/> class.
+            /// Initializes a new instance of the <see cref="CreateProductoCommandHandler" /> class.
             /// </summary>
             /// <param name="repository">The repository.</param>
             public CreateProductoCommandHandler(IRepositoryAsync<Domain.Entities.Productos> repository)

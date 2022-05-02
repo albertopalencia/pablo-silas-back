@@ -4,9 +4,9 @@
 // Created          : 01-06-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 01-06-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
-// <copyright file="EditorialConfiguration.cs" company="Persistence">
+// <copyright file="ProductoConfiguration.cs" company="Persistence">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -16,7 +16,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Configuration
-{ 
+{
+    /// <summary>
+    /// Class ProductoConfiguration.
+    /// Implements the <see cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Domain.Entities.Productos}" />
+    /// </summary>
+    /// <seealso cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Domain.Entities.Productos}" />
     public class ProductoConfiguration : IEntityTypeConfiguration<Productos>
     {
         /// <summary>

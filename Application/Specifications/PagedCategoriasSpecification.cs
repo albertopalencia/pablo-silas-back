@@ -4,9 +4,9 @@
 // Created          : 27-04-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 27-04-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
-// <copyright file="PagedFacturaSpecification.cs" company="Application">
+// <copyright file="PagedCategoriasSpecification.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -37,7 +37,8 @@ namespace Application.Specifications
         public PagedCategoriasSpecification(int pageSize, int pageNumber)
         {
             Query.Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize);
+                .Take(pageSize)
+                .OrderBy(x => x.Nombre);
         }
     }
 }

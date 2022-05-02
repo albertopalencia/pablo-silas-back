@@ -4,9 +4,9 @@
 // Created          : 01-07-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 01-13-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
-// <copyright file="CreateEditorialCommand.cs" company="Application">
+// <copyright file="DeleteProductoCommand.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -31,10 +31,19 @@ namespace Application.Feautures.Producto.Commands.DeleteProductoCommand
     /// <seealso cref="MediatR.IRequest{Response{int}}" />
     public class DeleteProductoCommand : IRequest<Response<int>>
     {
-         
-        public int Id { get; set; }
-  
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>The identifier.</value>
+        public int Id { get; set; }
+
+
+        /// <summary>
+        /// Class DeleteProductoCommandHandler.
+        /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Producto.Commands.DeleteProductoCommand.DeleteProductoCommand, Application.Wrappers.Response{System.Int32}}" />
+        /// </summary>
+        /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Producto.Commands.DeleteProductoCommand.DeleteProductoCommand, Application.Wrappers.Response{System.Int32}}" />
         public class DeleteProductoCommandHandler : IRequestHandler<DeleteProductoCommand, Response<int>>
         {
             /// <summary>
@@ -44,7 +53,7 @@ namespace Application.Feautures.Producto.Commands.DeleteProductoCommand
 
 
             /// <summary>
-            /// Initializes a new instance of the <see cref="CreateProductoCommandHandler"/> class.
+            /// Initializes a new instance of the <see cref="CreateProductoCommandHandler" /> class.
             /// </summary>
             /// <param name="repository">The repository.</param>
             public DeleteProductoCommandHandler(IRepositoryAsync<Domain.Entities.Productos> repository)
@@ -58,6 +67,7 @@ namespace Application.Feautures.Producto.Commands.DeleteProductoCommand
             /// <param name="request">The request</param>
             /// <param name="cancellationToken">Cancellation token</param>
             /// <returns>Response from the request</returns>
+            /// <exception cref="Application.Exceptions.ApiException">No se encontro el id: {request.Id}</exception>
             /// <exception cref="ApiException">No se encontro el id</exception>
             public async Task<Response<int>> Handle(DeleteProductoCommand request, CancellationToken cancellationToken)
             {

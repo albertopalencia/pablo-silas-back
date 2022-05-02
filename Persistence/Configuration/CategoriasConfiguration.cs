@@ -4,9 +4,9 @@
 // Created          : 01-06-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 01-06-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
-// <copyright file="FacturaConfiguration.cs" company="Persistence">
+// <copyright file="CategoriasConfiguration.cs" company="Persistence">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -20,7 +20,9 @@ namespace Persistence.Configuration
     /// <summary>
     /// Class FacturaConfiguration.
     /// Implements the <see cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Factura}" />
+    /// Implements the <see cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Domain.Entities.Categorias}" />
     /// </summary>
+    /// <seealso cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Domain.Entities.Categorias}" />
     /// <seealso cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Factura}" />
     public class CategoriasConfiguration : IEntityTypeConfiguration<Domain.Entities.Categorias>
     {

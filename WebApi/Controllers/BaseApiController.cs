@@ -6,7 +6,7 @@
 // Last Modified By : alberto palencia
 // Last Modified On : 01-07-2022
 // ***********************************************************************
-// <copyright file="AuthorController.cs" company="WebApi">
+// <copyright file="BaseApiController.cs" company="WebApi">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -27,7 +27,14 @@ namespace WebApi.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     public abstract class BaseApiController : ControllerBase
     {
+        /// <summary>
+        /// The mediator
+        /// </summary>
         private IMediator _mediator;
+        /// <summary>
+        /// Gets the mediator.
+        /// </summary>
+        /// <value>The mediator.</value>
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
         
     }

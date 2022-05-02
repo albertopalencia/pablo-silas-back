@@ -4,9 +4,9 @@
 // Created          : 01-07-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 01-13-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
-// <copyright file="ClassEditProductosommand.cs" company="Application">
+// <copyright file="EditProductoCommand.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -34,15 +34,36 @@ namespace Application.Feautures.Producto.Commands.EditProductoCommand
     /// <seealso cref="MediatR.IRequest{Response{int}}" />
     public class EditProductoCommand: IRequest<Response<int>>
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>The identifier.</value>
         public int Id { get; set; }
-         
+
+        /// <summary>
+        /// Gets or sets the nombre.
+        /// </summary>
+        /// <value>The nombre.</value>
         public string Nombre { get; set; }
 
+        /// <summary>
+        /// Gets or sets the identifier categoria.
+        /// </summary>
+        /// <value>The identifier categoria.</value>
         public int IdCategoria { get; set; }
 
+        /// <summary>
+        /// Gets or sets the descripcion.
+        /// </summary>
+        /// <value>The descripcion.</value>
         public string Descripcion { get; set; }
-  
 
+
+        /// <summary>
+        /// Class EditProductoCommandHandler.
+        /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Producto.Commands.EditProductoCommand.EditProductoCommand, Application.Wrappers.Response{System.Int32}}" />
+        /// </summary>
+        /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Producto.Commands.EditProductoCommand.EditProductoCommand, Application.Wrappers.Response{System.Int32}}" />
         public class EditProductoCommandHandler : IRequestHandler<EditProductoCommand, Response<int>>
         {
             /// <summary>
@@ -50,14 +71,17 @@ namespace Application.Feautures.Producto.Commands.EditProductoCommand
             /// </summary>
             private readonly IRepositoryAsync<Domain.Entities.Productos> _repository;
 
+            /// <summary>
+            /// The mapper
+            /// </summary>
             private readonly IMapper _mapper;
 
 
             /// <summary>
-            /// Initializes a new instance of the <see cref="EditProductoCommandHandler"/> class.
+            /// Initializes a new instance of the <see cref="EditProductoCommandHandler" /> class.
             /// </summary>
             /// <param name="repository">The repository.</param>
-            ///  /// <param name="mapper">The mapper.</param>
+            /// <param name="mapper">The mapper.</param>
             public EditProductoCommandHandler(IRepositoryAsync<Domain.Entities.Productos> repository, IMapper mapper)
             {
                 _repository = repository;
@@ -70,6 +94,7 @@ namespace Application.Feautures.Producto.Commands.EditProductoCommand
             /// <param name="request">The request</param>
             /// <param name="cancellationToken">Cancellation token</param>
             /// <returns>Response from the request</returns>
+            /// <exception cref="KeyNotFoundException">No se encontro el id: {request.Id}</exception>
             /// <exception cref="ApiException">No se encontro el ido</exception>
             public async Task<Response<int>> Handle(EditProductoCommand  request, CancellationToken cancellationToken)
             {

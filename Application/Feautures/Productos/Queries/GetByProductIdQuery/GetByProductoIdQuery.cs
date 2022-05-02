@@ -4,9 +4,9 @@
 // Created          : 27-04-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 27-04-2022
+// Last Modified On : 04-30-2022
 // ***********************************************************************
-// <copyright file="GetAllProductoQuery.cs" company="Application">
+// <copyright file="GetByProductoIdQuery.cs" company="Application">
 //     Copyright (c) everis. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -27,17 +27,25 @@ namespace Application.Feautures.Editorial.Queries.GetAllProducto
     /// <summary>
     /// Class GetAllProductoQuery.
     /// Implements the <see cref="MediatR.IRequest{Application.Wrappers.Response{System.Collections.Generic.List{Application.DTOs.ProductoDto}}}" />
+    /// Implements the <see cref="MediatR.IRequest{Application.Wrappers.Response{Application.DTOs.ProductoDto}}" />
     /// </summary>
+    /// <seealso cref="MediatR.IRequest{Application.Wrappers.Response{Application.DTOs.ProductoDto}}" />
     /// <seealso cref="MediatR.IRequest{Application.Wrappers.Response{System.Collections.Generic.List{Application.DTOs.ProductoDto}}}" />
     public class GetByProductoIdQuery: IRequest<Response<ProductoDto>>
     {
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>The identifier.</value>
         public int Id { get; set; }
 
         /// <summary>
         /// Class GetAllEditorialQueryHandler.
         /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Editorial.Queries.GetAllProducto.GetByProductoIdQuery, Application.Wrappers.Response{System.Collections.Generic.List{Application.DTOs.ProductoDto}}}" />
+        /// Implements the <see cref="MediatR.IRequestHandler{Application.Feautures.Editorial.Queries.GetAllProducto.GetByProductoIdQuery, Application.Wrappers.Response{Application.DTOs.ProductoDto}}" />
         /// </summary>
+        /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Editorial.Queries.GetAllProducto.GetByProductoIdQuery, Application.Wrappers.Response{Application.DTOs.ProductoDto}}" />
         /// <seealso cref="MediatR.IRequestHandler{Application.Feautures.Editorial.Queries.GetAllProducto.GetByProductoIdQuery, Application.Wrappers.Response{System.Collections.Generic.List{Application.DTOs.ProductoDto}}}" />
         public class ProductoQueryHandler : IRequestHandler<GetByProductoIdQuery, Response<ProductoDto>>
         {
@@ -69,7 +77,7 @@ namespace Application.Feautures.Editorial.Queries.GetAllProducto
             /// <returns>Task&lt;Response&lt;List&lt;ProductoDto&gt;&gt;&gt;.</returns>
             public async Task<Response<ProductoDto>> Handle(GetByProductoIdQuery request, CancellationToken cancellationToken)
             {
-                var producto = await _repository.ListAsync(new Specifications.ProductoIncludeSpecification(), cancellationToken);                
+                var producto = await _repository.GetByIdAsync(request.Id, cancellationToken);                
                 var productoDto = _mapper.Map<ProductoDto>(producto);
                 return new Response<ProductoDto>(productoDto);
             }

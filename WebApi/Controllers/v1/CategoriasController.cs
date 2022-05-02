@@ -4,11 +4,11 @@
 // Created          : 27-04-2022
 //
 // Last Modified By : alberto palencia
-// Last Modified On : 27-04-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
-// <copyright file="BookController.cs" company="WebApi">
+// <copyright file="CategoriasController.cs" company="WebApi">
 //     Copyright (c) everis. All rights reserved.
-// </copyright>--``
+// </copyright>
 // <summary></summary>
 // ***********************************************************************
 
@@ -32,7 +32,8 @@ namespace WebApi.Controllers.v1
         /// Gets the specified filter.`
         /// </summary>
         /// <param name="filter">The filter.</param>
-        /// <returns>IActionResult.</returns>+-
+        /// <returns>IActionResult.</returns>
+        /// +-
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetAllCategoriasParameters filter)
         {
